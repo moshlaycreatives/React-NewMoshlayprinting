@@ -1,29 +1,46 @@
 import { Button } from "@mui/material";
+import "./styles.css";
 
 type MuiButtonProps = {
   children: string;
   variant?: "contained" | "outlined" | "text";
   onClick?: () => void;
   styles?: React.CSSProperties;
-  sx?: React.CSSProperties;
+  sx?: object;
   endIcon?: React.ReactNode;
 };
 
 export const MuiButton = (props: MuiButtonProps) => {
-  const variant = props.variant ? props.variant : "contained";
+  const variant = props.variant || "contained";
+
   return (
     <Button
-      variant={variant}
-      style={{
-        color: variant === "contained" ? "white" : "black",
-        backgroundColor: variant === "contained" ? "black" : "white",
+      className={`mui-button ${variant}`}
+      sx={{
         borderRadius: "999px",
-        border: variant === "outlined" ? "1px solid black" : "none",
-        ...props.styles,
+        width: "130px",
+        height: "45px",
+        textTransform: "none",
+        ...(variant === "contained" && {
+          color: "white",
+          backgroundColor: "black",
+          border: "none",
+        }),
+        ...(variant === "outlined" && {
+          color: "black",
+          backgroundColor: "white",
+          border: "1px solid black",
+        }),
+        ...(variant === "text" && {
+          color: "black",
+          backgroundColor: "transparent",
+          border: "none",
+        }),
+        ...props.sx,
       }}
-      sx={props.sx}
       onClick={props.onClick}
       endIcon={props.endIcon}
+      style={props.styles}
     >
       {props.children}
     </Button>

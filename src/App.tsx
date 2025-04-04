@@ -1,9 +1,9 @@
-import { SearchBar } from "./components/SearchBar";
+import { LandingPage } from "./pages/LandingPage";
 
 export const App = () => {
   return (
-    <div style={{ padding: "10px" }}>
-      <SearchBar />
+    <div>
+      <LandingPage />
     </div>
   );
 };

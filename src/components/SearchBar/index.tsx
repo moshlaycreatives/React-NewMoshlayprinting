@@ -1,28 +1,46 @@
-import { TextField, InputAdornment } from "@mui/material";
-import SearchIcon from "@mui/icons-material/Search";
+import { TextField } from "@mui/material";
+import searchIcon from "../../assets/icons/search.png";
 
 export const SearchBar = () => {
   return (
-    <TextField
-      variant="outlined"
-      placeholder="Search products by names, needs, categories ..."
-      fullWidth
-      InputProps={{
-        startAdornment: (
-          <InputAdornment position="start">
-            <SearchIcon />
-          </InputAdornment>
-        ),
-        style: {
-          borderRadius: "25px",
-          padding: "8px 10px",
-        },
+    <div
+      style={{
+        backgroundColor: "white",
+        display: "flex",
+        alignItems: "center",
+        border: "1px solid #242424",
+        borderRadius: "999px",
+        padding: "8px 16px",
+        width: "80%",
       }}
-      sx={{
-        "& .MuiOutlinedInput-root": {
-          borderRadius: "25px",
-        },
-      }}
-    />
+    >
+      {/* Custom Search Icon Image */}
+      <img
+        src={searchIcon}
+        alt="Search Icon"
+        style={{ width: "20px", height: "20px", marginRight: "8px" }}
+      />
+
+      {/* Search Area */}
+      <TextField
+        variant="standard"
+        placeholder="Search products by names, needs, categories..."
+        slotProps={{
+          input: {
+            disableUnderline: true,
+            style: { color: "#242424" },
+          },
+        }}
+        sx={{
+          "& input::placeholder": {
+            color: "#242424",
+            opacity: 1,
+            fontStyle: "italic",
+          },
+          width: "100%",
+        }}
+        fullWidth
+      />
+    </div>
   );
 };

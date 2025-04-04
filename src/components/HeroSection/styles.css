@@ -1,0 +1,19 @@
+.main-container {
+  padding-left: 100px;
+  padding-right: 100px;
+  background-color: yellow;
+  /* display: flex; */
+  flex: 1;
+}
+
+.text-container {
+  background-color: lightcoral;
+  display: flex;
+  flex: 1;
+}
+
+.slider-container {
+  background-color: lightsalmon;
+  display: flex;
+  flex: 1;
+}

@@ -1,0 +1,21 @@
+.mui-button {
+  text-transform: none;
+}
+
+.mui-button.contained {
+  color: white;
+  background-color: black;
+  border: none;
+}
+
+.mui-button.outlined {
+  color: black;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.mui-button.text {
+  color: black;
+  background-color: transparent;
+  border: none;
+}
